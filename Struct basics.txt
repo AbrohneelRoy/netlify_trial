@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+struct {
+    int rn;
+    string name;
+    string email;
+}st;
+
+
+    struct st;
+    st.rn=007;
+    st.name="Royan";
+    st.email="Royan@gamil.com";
+    
+    cout<<"Student Roll No. : "<<st.rn<<endl;
+    cout<<"Student Name : "<<st.name<<endl;
+    cout<<"Student Email id : "<<st.email;
+}    
+   

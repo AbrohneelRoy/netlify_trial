@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Hollywood{
+public:
+string m;
+float r;
+int y;
+    void f(){
+    cout<<"Movie Name : "<<m<<"\n"<<"IMDB Rating : "<<r<<"\n"<<"Release Year : "<<y<<endl;
+    }
+};
+
+class Anime{
+public:
+string m;
+float r;
+int y;
+    void f(){
+    cout<<"\n"<<"Movie Name : "<<m<<"\n"<<"IMDB Rating : "<<r<<"\n"<<"Release Year : "<<y;
+    }
+};
+
+
+int main(){
+    Hollywood a1;
+    Anime a2;
+    cin>>a1.m>>a1.r>>a1.y;
+    cin>>a2.m>>a2.r>>a2.y;
+    a1.f();
+    a2.f();
+
+}

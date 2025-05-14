@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+const int V = 4;
+// Function to check if it's safe to color vertex v with color c
+bool isSafe(int v, int graph[V][V], int color[], int c) {
+    for (int i = 0; i < V; i++) {
+        if (graph[v][i] == 1 && c == color[i]) {
+        	// If there's an edge between v and i and 
+			//they have the same color, it's not safe
+            return false; 
+			}
+    }
+    return true;
+}
+// Recursive function to find a valid graph coloring
+bool graphColoringUtil(int graph[V][V], int m, int color[], int v) {
+    if (v == V) {
+        return true; // If all vertices are successfully colored, a valid coloring exists
+    }
+    for (int c = 1; c <= m; c++) {
+        if (isSafe(v, graph, color, c)) {
+            color[v] = c; // Assign color c to vertex v
+            if (graphColoringUtil(graph, m, color, v + 1)) {
+                return true;
+Ajusha V L2:33 PM
+// Recursively explore the next vertex
+            }
+            color[v] = 0; // Backtrack by resetting the color if the coloring is not successful
+        }
+    }
+    return false; // If no valid coloring is found
+}
+
+void printSolution(int color[]) {
+    cout << "Solution Exists:" << endl;
+    for (int i = 0; i < V; i++) {
+        cout << color[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int graph[V][V];
+    int m, i, j;
+    int color[V];
+    for (i = 0; i < V; i++) {
+for (i = 0; i < V; i++) { // Input the graph's adjacency matrix
+        for (j = 0; j < V; j++) {
+            cin >> graph[i][j];
+        }
+    }
+    cin >> m; // Input the number of colors available for coloring
+    
+    for (i = 0; i < V; i++) {  // Initialize the color array
+        color[i] = 0;
+    }
+    if (!graphColoringUtil(graph, m, color, 0)) {
+        cout << "Solution does not exist" << endl;
+        return 1;
+    }
+    printSolution(color);
+    return 0;
+}

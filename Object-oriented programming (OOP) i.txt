@@ -1,0 +1,25 @@
+Object-oriented programming (OOP) is a programming paradigm that organizes code into reusable and modular objects, which represent real-world entities or concepts. OOP is based on four fundamental principles, which are:
+
+Encapsulation: Encapsulation is the process of hiding the internal details of an object from the outside world. An object encapsulates its state (data) and behavior (methods) into a single unit, which can be accessed only through a public interface. This helps to prevent unwanted interference and makes the code more secure, maintainable, and flexible.
+
+Inheritance: Inheritance is the mechanism of creating new classes (subclasses) from existing classes (superclasses). A subclass inherits the properties and methods of its superclass and can also add its own properties and methods. This helps to promote code reuse, reduce code duplication, and simplify code maintenance.
+
+Polymorphism: Polymorphism is the ability of an object to take on multiple forms. In OOP, polymorphism is achieved through method overriding and method overloading. Method overriding allows a subclass to provide its own implementation of a method that is already defined in its superclass, while method overloading allows a class to define multiple methods with the same name but different parameters.
+
+Abstraction: Abstraction is the process of simplifying complex systems by modeling them at a higher level of abstraction. In OOP, abstraction is achieved through abstract classes and interfaces. An abstract class is a class that cannot be instantiated and is intended to be subclassed, while an interface is a collection of abstract methods that can be implemented by any class that implements the interface.
+
+There are several types of OOP concepts, which are:
+
+Class: A class is a blueprint or template for creating objects. It defines the properties (data) and methods (behavior) of an object.
+
+Object: An object is an instance of a class. It has its own set of properties and methods, and can interact with other objects.
+
+Encapsulation: As mentioned earlier, encapsulation is the process of hiding the internal details of an object from the outside world. It is achieved through access modifiers such as public, private, and protected.
+
+Inheritance: Inheritance is the mechanism of creating new classes (subclasses) from existing classes (superclasses). It allows subclasses to inherit the properties and methods of their superclasses.
+
+Polymorphism: Polymorphism is the ability of an object to take on multiple forms. It is achieved through method overriding and method overloading.
+
+Abstraction: Abstraction is the process of simplifying complex systems by modeling them at a higher level of abstraction. It is achieved through abstract classes and interfaces.
+
+Overall, OOP provides a powerful and flexible way of modeling real-world entities and concepts, and is widely used in many applications such as software development, game development, and web development

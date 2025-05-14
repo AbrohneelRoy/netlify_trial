@@ -1,0 +1,112 @@
+03/04/2023
+
+GRAPHS :
+
+>> Set or collection of nodes (vertices) and edges
+>> edges (arc): connection between two nodes
+>> representation of a graph : G(V,E)
+>> Directed graph - digraph >> unidirection 
+>> Undirected graph - bidirectional
+>> weighted directed graph - when a numerical positive value is given to the edges in directed graphs [weighed for on edge]
+>> weighted undirected graph - when a numerical positive value is given to the edges in undirected graphs [weighed for both edges]
+>> if link is there for both the nodes - represented as 1
+>> if link is not there for both the nodes - represented as 0
+>> adjacent matrix - 
+
+Undirected Graph
+
+   _ A B C D E _
+A |  0 1 0 1 0  |  [THIS IS AN EXAMPLE]
+B |  1 0 1 1 0  |
+C |  0 1 0 0 1  |
+D |  1 1 0 0 1  | 
+E |_ 0 0 1 1 0 _|
+
+Directed Graph
+
+   _ A B C D E _
+A |  0 1 0 1 0  |  [THIS IS AN EXAMPLE]
+B |  0 0 1 1 0  |
+C |  0 0 0 0 1  |
+D |  0 0 0 0 0  | 
+E |_ 0 0 0 1 0 _|
+
+Weighed Directed Graph
+
+   _ A B C D  E _
+A |  0 4 0 0  0  |  [THIS IS AN EXAMPLE]
+B |  0 0 2 1  0  |
+C |  0 0 0 0  8  |
+D |  5 0 0 0  0  | 
+E |_ 0 0 0 10 0 _|
+
+-------------------------------------------------
+
+#include<stdio.h>
+#define V 4
+
+void init(int arr[][V]) {
+	int i, J;
+	for (i = 0; i < V; i++)
+		for (j=0; j < V; j++)
+			arr[i][j] = 0;}
+
+/*function to add edges to the graph*/
+
+void insertEdge(int arr[][V], int i, int j){
+	arr[i][j] = 1;	
+	arr[j][i] = 1;}
+
+/*function to print the matrix elements*/
+
+void printAdjMMatrix(int arr[][V]){
+	int i,j;
+	for (i=0; i<V; i++){
+		printf("%d:", i);
+		for(j=0; j<V; j++){
+			printf("%d", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+int main()
+{
+	int adjMatrix[V][V];
+	init(adjMatrix);
+	insertEdge(adjMatrix,0,1);
+	insertEdge(adjMatrix,0,2);
+	insertEdge(adjMatrix,1,2);
+	insertEdge(adjMatrix,2,0);
+	insertEdge(adjMatrix,2,3);
+
+	printAdjMatrix(adjMatrix);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
