@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int r,c,i,j,arr[100][100];
+    cin>>r>>c;
+    for(i=0; i<r; i++){
+        for(j=0; j<c; j++){
+            cin>>arr[i][j];
+        }
+    }
+    for(i=0; i<r; i++){
+        for(j=0; j<c; j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<'\n';
+    }
+    return 0;
+}

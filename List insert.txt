@@ -1,0 +1,470 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node *next;
+    node(int val){
+        data=val;
+        next=NULL;
+    }
+    
+    
+};
+
+int main(){
+    node *head=NULL;
+    node *tail=NULL;
+    int n, val, arr[100],i;
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>val;
+        node* newnode=new node(val);
+        
+        if(head==NULL){
+            head=newnode;
+            tail=newnode;
+        }
+        else{
+            tail->next=newnode;
+            tail=tail->next;
+        }
+    }
+    node *current=head;
+    int tot=0;
+    while(current!=0){
+        arr[tot]=current->data;
+        current=current->next;
+        tot++;
+    }
+    
+    for(i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    
+    for(int j=tot-1; j>=0; j--){
+        cout<<arr[j]<<" ";
+    }
+
+}
+
+
+
+
+#include<iostream>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node *next;
+    node(int val){
+        data=val;
+        next=NULL;
+    }
+};
+
+void ins(node* &head, int val){
+    
+    node *n=new node(val)
+    
+    if(head==NULL){
+        head=n
+        return
+    }
+    
+    node *temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=n;
+    
+}
+
+void disp(node *head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temptemp->next;
+    }
+    cout<<endl;
+}
+
+bool search(node *head, int key){
+    node *temp=head;
+    while(temp!=NULL){
+        if(temp->data==key){
+            return true;
+        }
+        temp=temp->next
+    }
+    return false;
+}
+
+int main() {
+    node *head = NULL;
+    int value;
+    int numValues;
+    
+    cout << "Enter the number of values: ";
+    cin >> numValues;
+    
+    cout << "Enter the values: ";
+    for (int i = 0; i < numValues; i++) {
+        cin >> value;
+        ins(head, value);
+    }
+    
+    cout << "Linked List: ";
+    disp(head);
+    
+    int searchValue;
+    cout << "Enter a value to search: ";
+    cin >> searchValue;
+    
+    if (search(head, searchValue)) {
+        cout << "Value found in the linked list." << endl;
+    } else {
+        cout << "Value not found in the linked list." << endl;
+    }
+    
+    return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* next;
+    node(int val){
+        data=val;
+        next=NULL;
+    }
+};
+
+
+void hins(node* &head,int val){
+    node* n=new node(val);
+    n->next=head;
+    head=n;
+}
+
+void ins(node* &head,int val){
+    node* n=new node(val);
+    if(head==NULL){
+        head=n;
+        return;
+    }
+    node* temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=n;
+}
+
+void dis(node* head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+
+int main(){
+    node* head=NULL;
+    int n,m;
+    cin>>m;
+    for(int i=0;i<m; i++){
+        cin>>n;
+        hins(head,n);
+    }
+    dis(head);
+}
+
+
+
+#include<iostream>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* next;
+    node(int val){
+        data=val;
+        next=NULL;
+    }
+};
+
+
+void hins(node* &head,int val){
+    node* n=new node(val);
+    n->next=head;
+    head=n;
+}
+
+void ins(node* &head,int val){
+    node* n=new node(val);
+    if(head==NULL){
+        head=n;
+        return;
+    }
+    node* temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=n;
+}
+
+void dis(node* head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+
+
+void hdel(node* &head){
+    node* todel=head;
+    head=head->next;
+    delete todel;
+}
+
+void del(node* &head,int val){
+    if(head==NULL){
+        return;
+    }
+    
+    if(head->next==NULL){
+        hdel(head);
+        return;
+    }
+    
+    node* temp=head;
+    while(temp->next->data!=val){
+        temp=temp->next;
+    }
+    node* todel=temp->next;
+    temp->next=temp->next->next;
+    delete todel;
+}
+
+int main(){
+    node* head=NULL;
+    int n,m,a;
+    cin>>m;
+    for(int i=0;i<m; i++){
+        cin>>n;
+        ins(head,n);
+    }
+    dis(head);
+    cin>>a;
+    del(head,a);
+  
+    dis(head);
+}
+
+
+#include<iostream>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* left;
+    node* right;
+    node(int val){
+        data=val;
+        left=NULL;
+        right=NULL;
+    }
+};
+
+void it(node* root){
+    if(root==NULL){
+        return;
+    }
+    it(root->left);
+    cout<<root->data<<" ";
+    it(root->right);
+}
+
+int main(){
+    int a,val;
+    cin>>a;
+    node* root=NULL;
+    node* temp;
+    for(int i=0; i<a; i++){
+        cin>>val;
+        if(root==NULL){
+            root=new node(val);
+        }
+        else{
+            temp=root;
+            while(true){
+                if(val<temp->data){
+                    if(temp->left==NULL){
+                        temp->left=new node(val);
+                        break;
+                    }
+                    else{
+                        temp=temp->left;
+                    }
+                }
+                else{
+                    if(temp->right==NULL){
+                        temp->right=new node(val);
+                        break;
+                    }
+                    else{
+                        temp=temp->right;
+                    }
+                }
+            }
+        }
+    }
+    it(root);
+}
+\
+
+#include<iostream>
+using namespace std;
+#define n 100
+class stack{
+    int* arr;
+    int top;
+    public:
+    stack(){
+        arr=new int[n];
+        top=-1;
+    }
+    void push(int x){
+        top++;
+        arr[top]=x;
+    }
+    void pop(){
+        top--;
+    }
+    int Top(){
+        return arr[top];
+    }
+};
+int main(){
+    stack st;
+    int a,v;
+    cin>>a;
+    for(int i=0; i<a; i++){
+        cin>>v;
+        st.push(v);
+    }
+    for(int i=0; i<a; i++){
+        cout<<st.Top()<<" ";
+        st.pop();
+    }
+}
+
+#include<iostream>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* next;
+    node* prev;
+    node(int val){
+        data=val;
+        next=NULL;
+        prev=NULL;
+    }
+};
+
+void hins(node* &head,int val){
+    node* n=new node(val);
+    n->next=head;
+    head->prev=n;
+    head=n;
+}
+
+void ins(node* &head, int val){
+    node* n=new node(val);
+    if(head==NULL){
+        head=n;
+        return;
+    }
+    node* temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=n;
+    n->prev=temp;
+}
+void disp(node* head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+
+int main(){
+    int n,m;
+    node* head=NULL;
+    cin>>n;
+    for(int i=0; i<n; i++){
+        cin>>m;
+        ins(head,m);
+    }
+    disp(head);
+}
+
+#include<iostream>
+using namespace std;
+#define n 100
+class queue{
+    int* arr;
+    int front;
+    int back;
+    public:
+    queue(){
+        arr=new int[n];
+        front=-1;
+        back=-1;
+    }
+    void enqueue(int x){
+        back++;
+        arr[back]=x;
+        if(front==-1){
+            front++;
+        }
+    }
+    void dequeue(){
+        front++;
+    }
+    int peek(){
+        return arr[front];
+    }
+};
+
+int main(){
+    queue qw;
+    int a,m;
+    cin>>a;
+    for(int i=0; i<a;i++){
+        cin>>m;
+        qw.enqueue(m);
+    }
+    for(int i=0; i<a; i++){
+        cout<<qw.peek()<<" ";
+        qw.dequeue();
+    }
+    
+}

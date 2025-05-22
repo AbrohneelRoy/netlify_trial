@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int ch;
+    cin>>ch;
+    if(ch==100){
+        cout<<"S";
+    }
+    else if(ch>=90 && ch<=99){
+        cout<<"A";
+    }
+    else if(ch>=80 && ch<=89){
+        cout<<"B";
+    }
+    else if(ch>=70 && ch<=79){
+        cout<<"C";
+    }
+    else if(ch>=60 && ch<=69){
+        cout<<"D";
+    }
+    else if(ch>=50 && ch<=59){
+        cout<<"E";
+    }
+    else if(ch<=49){
+        cout<<"F";
+    }    
+    else{
+        cout<<"Invalid";
+    }
+    return 0;
+}

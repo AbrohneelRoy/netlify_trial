@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int a,b,i,j,sum=0,arr[100][100];
+    cin>>a>>b;
+    for(i=0; i<a; i++){
+        for(j=0; j<b; j++){
+            cin>>arr[i][j];
+        }
+        
+    }
+    for(i=0; i<a; i++){
+        for(j=0; j<b; j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+    cout<<"\n";
+    for(i=0; i<a; i++){
+        for(j=0; j<b; j++){
+            sum+=arr[i][j];
+        }
+    }    
+    cout<<"Sum of the 2d array = "<<sum;
+    
+    return 0;
+}

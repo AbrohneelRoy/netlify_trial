@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+
+int main(){
+    int a,b;
+    char ch;
+    cin>>a>>b>>ch;
+    switch(ch){
+        case '+':
+            cout<<fixed<<setprecision(2)<<float(a+b);
+            break;
+        case '-':
+            cout<<fixed<<setprecision(2)<<float(a-b);
+            break;
+        case '*':
+            cout<<fixed<<setprecision(2)<<float(a*b);
+            break;
+        case '/':
+            cout<<fixed<<setprecision(2)<<float(a/b);
+            break;
+        case '%':
+            cout<<fixed<<setprecision(2)<<fmod(a,b);
+            break;
+        default:
+            cout<<"Invalid input";
+    }
+    return 0;
+}
